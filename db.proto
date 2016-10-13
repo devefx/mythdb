@@ -40,7 +40,7 @@ message UserInfo
 	required int32 sta			= 14;	// 耐力
 	required int32 dex			= 15;	// 敏捷
 
-
+	repeated ItemInfo items			= 16;	// 物品集合
 	
 }
 
@@ -71,4 +71,12 @@ message MapEvent
 	required int32 map_id			= 6;	// 地图id
 	required int32 x			= 7;	// 地图 X 坐标
 	required int32 y			= 8;	// 地图 Y 坐标
+}
+
+// 物品信息
+message ItemInfo
+{
+	required int32 id			= 1;	// 物品Id
+	required string name			= 2;	// 名称
+	required string description		= 3;	// 描述
 }
