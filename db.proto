@@ -1,0 +1,44 @@
+
+/*
+
+说明
+
+	repeated 重复，相当于数组或集合
+	required 必填
+	optional 可选
+
+类型
+
+	double	双精度小数
+	float	浮点数
+	int32	整数
+	int64	长整数
+	uint32	无符号整数
+	uint64	无符号长整数
+	string	字符串
+	bool	布尔值，true 或 false
+	bytes	字节集
+*/
+
+message UserInfo
+{
+	required int32 id 			= 1;	// 用户ID
+	required int32 actor_id 		= 2;	// 角色ID
+	required string name 			= 3;	// 用户名称
+	required int32 map_id 			= 4;	// 地图ID
+	required int32 x 			= 5;	// 地图 X 坐标
+	required int32 y 			= 6;	// 地图 Y 坐标
+	required int32 direction 		= 7;	// 角色朝向
+
+	required int32 hp			= 8;	// 生命
+	required int32 mp			= 9;	// 魔法
+	required int32 sp			= 10;	// 愤怒
+	required int32 con			= 11;	// 体质
+	required int32 mag			= 12;	// 魔力
+	required int32 str			= 13;	// 力量
+	required int32 sta			= 14;	// 耐力
+	required int32 dex			= 15;	// 敏捷
+
+
+	
+}
