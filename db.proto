@@ -73,10 +73,58 @@ message MapEvent
 	required int32 y			= 8;	// 地图 Y 坐标
 }
 
+// 物品类型
+enum ItmeType
+{
+	EQUIP					= 1;	// 装备
+}
+
 // 物品信息
 message ItemInfo
 {
 	required int32 id			= 1;	// 物品Id
 	required string name			= 2;	// 名称
 	required string description		= 3;	// 描述
+	required int32 number			= 4;	// 数量
+	required ResourceInfo icon_s		= 5;	// 小图标
+	required ResourceInfo icon_b		= 6;	// 大图标
+	required ItmeType type			= 7;	// 物品类型
+	
+
+	optional EquipInfo equip		= 10;	// 武器
+
+}
+
+// 装备类型
+enum EquipType
+{
+	WEAPON					= 1;	// 武器
+	HELMET					= 2;	// 头盔
+	ARMOUR					= 3;	// 铠甲
+	BELT					= 4;	// 腰带
+	SHOE					= 5;	// 鞋子
+	AMULET					= 6;	// 护符
+}
+
+// 装备信息
+message EquipInfo
+{
+	required int32 id			= 1;	// 装备Id
+	required EquipType type			= 2;	// 装备类型
+	required int32 level			= 3;	// 等级
+	required bool is_wear			= 4;	// 是否已经装备
+
+	optional int32 hp			= 5;	// 生命
+	optional int32 mp			= 6;	// 魔法
+	optional int32 atk			= 7;	// 攻击
+	optional int32 def			= 8;	// 防御
+	optional int32 hit			= 9;	// 命中
+	optional int32 eva			= 10;	// 躲闪
+	optional int32 psy			= 11;	// 灵力
+	optional int32 spd			= 12;	// 速度
+	optional int32 con			= 13;	// 体质
+	optional int32 mag			= 14;	// 魔力
+	optional int32 str			= 15;	// 力量
+	optional int32 sta			= 16;	// 耐力
+	optional int32 dex			= 17;	// 敏捷
 }
