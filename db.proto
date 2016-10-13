@@ -1,44 +1,74 @@
 
 /*
 
-ËµÃ÷
+è¯´æ˜
 
-	repeated ÖØ¸´£¬Ïàµ±ÓÚÊı×é»ò¼¯ºÏ
-	required ±ØÌî
-	optional ¿ÉÑ¡
+	repeated é‡å¤ï¼Œç›¸å½“äºæ•°ç»„æˆ–é›†åˆ
+	required å¿…å¡«
+	optional å¯é€‰
 
-ÀàĞÍ
+ç±»å‹
 
-	double	Ë«¾«¶ÈĞ¡Êı
-	float	¸¡µãÊı
-	int32	ÕûÊı
-	int64	³¤ÕûÊı
-	uint32	ÎŞ·ûºÅÕûÊı
-	uint64	ÎŞ·ûºÅ³¤ÕûÊı
-	string	×Ö·û´®
-	bool	²¼¶ûÖµ£¬true »ò false
-	bytes	×Ö½Ú¼¯
+	double	åŒç²¾åº¦å°æ•°
+	float	æµ®ç‚¹æ•°
+	int32	æ•´æ•°
+	int64	é•¿æ•´æ•°
+	uint32	æ— ç¬¦å·æ•´æ•°
+	uint64	æ— ç¬¦å·é•¿æ•´æ•°
+	string	å­—ç¬¦ä¸²
+	bool	å¸ƒå°”å€¼ï¼Œtrue æˆ– false
+	bytes	å­—èŠ‚é›†
 */
 
+// ç”¨æˆ·ä¿¡æ¯
 message UserInfo
 {
-	required int32 id 			= 1;	// ÓÃ»§ID
-	required int32 actor_id 		= 2;	// ½ÇÉ«ID
-	required string name 			= 3;	// ÓÃ»§Ãû³Æ
-	required int32 map_id 			= 4;	// µØÍ¼ID
-	required int32 x 			= 5;	// µØÍ¼ X ×ø±ê
-	required int32 y 			= 6;	// µØÍ¼ Y ×ø±ê
-	required int32 direction 		= 7;	// ½ÇÉ«³¯Ïò
+	required int32 id 			= 1;	// ç”¨æˆ·ID
+	required int32 actor_id 		= 2;	// è§’è‰²ID
+	required string name 			= 3;	// ç”¨æˆ·åç§°
+	required int32 map_id 			= 4;	// åœ°å›¾ID
+	required int32 x 			= 5;	// åœ°å›¾ X åæ ‡
+	required int32 y 			= 6;	// åœ°å›¾ Y åæ ‡
+	required int32 direction 		= 7;	// è§’è‰²æœå‘
 
-	required int32 hp			= 8;	// ÉúÃü
-	required int32 mp			= 9;	// Ä§·¨
-	required int32 sp			= 10;	// ·ßÅ­
-	required int32 con			= 11;	// ÌåÖÊ
-	required int32 mag			= 12;	// Ä§Á¦
-	required int32 str			= 13;	// Á¦Á¿
-	required int32 sta			= 14;	// ÄÍÁ¦
-	required int32 dex			= 15;	// Ãô½İ
+	required int32 hp			= 8;	// ç”Ÿå‘½
+	required int32 mp			= 9;	// é­”æ³•
+	required int32 sp			= 10;	// æ„¤æ€’
+	required int32 con			= 11;	// ä½“è´¨
+	required int32 mag			= 12;	// é­”åŠ›
+	required int32 str			= 13;	// åŠ›é‡
+	required int32 sta			= 14;	// è€åŠ›
+	required int32 dex			= 15;	// æ•æ·
 
 
 	
+}
+
+// èµ„æºä¿¡æ¯
+message ResourceInfo
+{
+	required string package			= 1;	// æ•°æ®åŒ…åç§°
+	optional int32 id			= 2;	// èµ„æºID
+}
+
+// åœ°å›¾ä¿¡æ¯
+message MapInfo
+{
+	required int32 id			= 1;	// åœ°å›¾id
+	required string name			= 2;	// åœ°å›¾åç§°
+	required string bg_music		= 3;	// èƒŒæ™¯éŸ³ä¹
+	repeated MapEvent events		= 4;	// åœ°å›¾äº‹ä»¶é›†åˆ
+}
+
+// åœ°å›¾äº‹ä»¶
+message MapEvent
+{
+	required int32 id			= 1;	// äº‹ä»¶id
+	required string name			= 2;	// äº‹ä»¶åç§°
+	optional int32 name_color		= 3;	// åç§°é¢œè‰²
+	required string title			= 4;	// äº‹ä»¶ç§°è°“
+	optional int32 title_color		= 5;	// ç§°è°“é¢œè‰²
+	required int32 map_id			= 6;	// åœ°å›¾id
+	required int32 x			= 7;	// åœ°å›¾ X åæ ‡
+	required int32 y			= 8;	// åœ°å›¾ Y åæ ‡
 }
